@@ -14,6 +14,8 @@ The goal of this service is to simulate how real ride-hailing systems like Uber 
 
 * **Java 17**
 * **Spring Boot**
+* **SQL**
+* **Hibernate**
 * **Spring Data Redis**
 * **Redis GEO**
 * **Gradle**
