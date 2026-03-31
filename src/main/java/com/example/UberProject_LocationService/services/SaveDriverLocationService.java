@@ -5,10 +5,7 @@ import org.springframework.data.geo.*;
 import org.springframework.data.redis.connection.RedisGeoCommands;
 import org.springframework.data.redis.core.GeoOperations;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +20,7 @@ public class SaveDriverLocationService implements LocationService{
     }
 
     @Override
-    public Boolean SaveDriverLocation(String driverId, Double latitude, Double longitude) {
+    public Boolean SaveDriverLocation(String driverId, double latitude, double longitude) {
         try{
             GeoOperations<String, String> geoOps = stringRedisTemplate.opsForGeo();
             geoOps.add(DRIVER_GEO_OPS_KEY,
@@ -36,7 +33,7 @@ public class SaveDriverLocationService implements LocationService{
     }
 
     @Override
-    public List<DriverLocationResponseDto> GetNearByDriver(Double latitude, Double longitude) {
+    public List<DriverLocationResponseDto> GetNearByDriver(double latitude, double longitude) {
 
             GeoOperations<String, String> geoOps = stringRedisTemplate.opsForGeo();
             Distance radius = new Distance(SEARCH_RADIUS, Metrics.KILOMETERS);

@@ -40,7 +40,7 @@ public class LocationController {
     }
 
 
-    @GetMapping("/nearby/drivers")
+    @PostMapping("/nearby/drivers")
     public ResponseEntity<List<DriverLocationResponseDto>> GetNearByDrivers(@RequestBody NearByDriverRequestDto nearByDriverRequestDto){
       try{
           List<DriverLocationResponseDto> drivers = saveDriverLocationService.GetNearByDriver(nearByDriverRequestDto.getLatitude(), nearByDriverRequestDto.getLongitude());
