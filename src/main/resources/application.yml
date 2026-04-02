@@ -2,7 +2,7 @@
 
 spring:
     application:
-        name: UberProject-LocationService
+        name:
 
 server:
     port: 7476
